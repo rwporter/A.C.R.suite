@@ -35,13 +35,23 @@ fi
 cd -
 
 # Install IDR
+mkdir -p "$HOME/software"
+wget -nc https://github.com/nboley/idr/archive/2.0.2.zip -P "$HOME/software"
+
 cd "$HOME/software"
-wget -nc https://github.com/nboley/idr/archive/2.0.2.zip
 unzip -o 2.0.2.zip && rm -f 2.0.2.zip
+cd -
+
 cd "$HOME/software/idr-2.0.2"
+
+# Copy patched idr.py from A.C.R.suite into IDR package
 cp -f "$HOME/software/A.C.R.suite/idr.py" "$HOME/software/idr-2.0.2/idr/"
-python3 -m pip install --user blosc Cython matplotlib
-python3 setup.py install --user
+
+# Install python deps + build IDR under Python 3.10
+python3.10 -m pip install --user --upgrade pip setuptools wheel
+python3.10 -m pip install --user matplotlib blosc "numpy==1.26.4" "Cython==0.29.36"
+python3.10 setup.py install --user
+
 cd -
 
 # Persist PATH + R_LIBS_USER in ~/.bashrc
