@@ -47,7 +47,7 @@ cd -
 # Install A.C.R.suite
 mkdir -p "$HOME/software"
 cd "$HOME/software"
-if [ ! -d "$HOME/software/A.C.Rsuite" ]; then
+if [ ! -d "$HOME/software/A.C.R.suite" ]; then
   git clone https://github.com/rwporter/A.C.R.suite.git
 fi
 cd -
@@ -57,14 +57,14 @@ cd "$HOME/software"
 wget -nc https://github.com/nboley/idr/archive/2.0.2.zip
 unzip -o 2.0.2.zip && rm -f 2.0.2.zip
 cd "$HOME/software/idr-2.0.2"
-cp -f "$HOME/software/A.C.Rsuite/idr.py" "$HOME/software/idr-2.0.2/idr/"
+cp -f "$HOME/software/A.C.R.suite/idr.py" "$HOME/software/idr-2.0.2/idr/"
 python3 -m pip install --user blosc Cython matplotlib
 python3 setup.py install --user
 cd -
 
 # Persist PATH + R_LIBS_USER in ~/.bashrc
-grep -qxF 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"' ~/.bashrc || \
-echo 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"' >> ~/.bashrc
+grep -qxF 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.R.suite:$PATH"' ~/.bashrc || \
+echo 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.R.suite:$PATH"' >> ~/.bashrc
 
 grep -qxF 'export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"' ~/.bashrc || \
 echo 'export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"' >> ~/.bashrc
