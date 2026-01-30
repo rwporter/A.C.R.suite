@@ -29,8 +29,8 @@ cd -
 # Install A.C.R.suite
 mkdir -p "$HOME/software"
 cd "$HOME/software"
-if [ ! -d "$HOME/software/A.C.Rsuite" ]; then
-  git clone https://github.com/rikutakei/A.C.Rsuite.git
+if [ ! -d "$HOME/software/A.C.R.suite" ]; then
+  git clone https://github.com/rwporter/A.C.R.suite.git
 fi
 cd -
 
@@ -39,7 +39,7 @@ cd "$HOME/software"
 wget -nc https://github.com/nboley/idr/archive/2.0.2.zip
 unzip -o 2.0.2.zip && rm -f 2.0.2.zip
 cd "$HOME/software/idr-2.0.2"
-cp -f "$HOME/software/A.C.Rsuite/idr.py" "$HOME/software/idr-2.0.2/idr/"
+cp -f "$HOME/software/A.C.R.suite/idr.py" "$HOME/software/idr-2.0.2/idr/"
 python3 -m pip install --user blosc Cython matplotlib
 python3 setup.py install --user
 cd -
