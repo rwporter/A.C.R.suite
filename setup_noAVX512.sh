@@ -48,7 +48,7 @@ cd -
 mkdir -p "$HOME/software"
 cd "$HOME/software"
 if [ ! -d "$HOME/software/A.C.Rsuite" ]; then
-  git clone https://github.com/rikutakei/A.C.Rsuite.git
+  git clone https://github.com/rwporter/A.C.R.suite.git
 fi
 cd -
 
