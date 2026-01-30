@@ -1,4 +1,4 @@
-# Setup on Cheaha
+# Installer
 
 Use this installer to bypass AVX-512 CPU instructions (Useful for HPCs with Intel & AMD CPUs on one partition)
 
