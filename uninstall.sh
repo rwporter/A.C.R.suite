@@ -1,6 +1,6 @@
 #!/bin/bash
 # Edited by Riley Porter 1/30/26
-# Removes: HOMER, A.C.Rsuite, IDR source tree, R user library (4.4), Makevars.portable,
+# Removes: HOMER, A.C.R.suite, IDR source tree, R user library (4.4), Makevars.portable,
 # and the PATH/R_LIBS_USER lines appended to ~/.bashrc.
 #
 # NOTE: This will NOT reliably uninstall the python packages installed with --user
@@ -13,11 +13,11 @@ set -euo pipefail
 R_LIBS_USER_PATH="$HOME/R/x86_64-pc-linux-gnu-library/4.4"
 MAKEVARS_PORTABLE="$HOME/.R/Makevars.portable"
 HOMER_DIR="$HOME/software/homer"
-ACRSUITE_DIR="$HOME/software/A.C.Rsuite"
+ACRSUITE_DIR="$HOME/software/A.C.R.suite"
 IDR_DIR="$HOME/software/idr-2.0.2"
 
 # Lines the installer appended to ~/.bashrc
-BASHRC_PATH_LINE='export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"'
+BASHRC_PATH_LINE='export PATH="$HOME/software/homer/bin:$HOME/software/A.C.R.suite:$PATH"'
 BASHRC_RLIBS_LINE='export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"'
 
 echo "=== Uninstall starting ==="
