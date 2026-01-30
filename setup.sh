@@ -45,8 +45,8 @@ python3 setup.py install --user
 cd -
 
 # Persist PATH + R_LIBS_USER in ~/.bashrc
-grep -qxF 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"' ~/.bashrc || \
-echo 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"' >> ~/.bashrc
+grep -qxF 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.R.suite:$PATH"' ~/.bashrc || \
+echo 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.R.suite:$PATH"' >> ~/.bashrc
 
 grep -qxF 'export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"' ~/.bashrc || \
 echo 'export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"' >> ~/.bashrc
