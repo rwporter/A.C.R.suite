@@ -14,7 +14,7 @@ wget https://github.com/rwporter/A.C.R.suite/raw/master/setup.sh
 bash setup.sh
 ```
 
-# A.C.Rsuite
+# A.C.R.suite
 ATAC-, ChIP- and RNA-seq data analysis tool suite.
 
 This is R (a programing language) based command line tool (CLT) suite which provides the preliminary graphic results as well as spreadsheets. It also tries to produce the publication-ready figures.
