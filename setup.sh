@@ -9,7 +9,7 @@ module load GCCcore/13.2.0
 module load R
 module load Anaconda3
 
-# Put installs in your user library
+# Define user library
 export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"
 
 # Prevent Tk/X11 issues on headless nodes
@@ -26,7 +26,7 @@ perl configureHomer.pl -install hg38
 perl configureHomer.pl -update
 cd -
 
-# Install A.C.Rsuite
+# Install A.C.R.suite
 mkdir -p "$HOME/software"
 cd "$HOME/software"
 if [ ! -d "$HOME/software/A.C.Rsuite" ]; then
@@ -44,7 +44,7 @@ python3 -m pip install --user blosc Cython matplotlib
 python3 setup.py install --user
 cd -
 
-# Persist PATH + R_LIBS_USER in ~/.bashrc (idempotent)
+# Persist PATH + R_LIBS_USER in ~/.bashrc
 grep -qxF 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"' ~/.bashrc || \
 echo 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.Rsuite:$PATH"' >> ~/.bashrc
 
@@ -59,12 +59,32 @@ Rscript --vanilla -e '
   dir.create(user_lib, recursive = TRUE, showWarnings = FALSE)
   .libPaths(user_lib)
 
-  cran_pkgs <- c("optparse", "ggplot2", "data.table", "dplyr", "BiocManager")
+  repos <- "https://mirrors.nics.utk.edu/cran/"
+
+  # CRAN packages
+  cran_pkgs <- c(
+    "BiocManager",
+    "optparse",
+    "ggplot2",
+    "MASS",
+    "pheatmap",
+    "rlang",
+    "Vennerable",
+    "grImport",
+    "gridExtra",
+    "RColorBrewer",
+    "colorspace",
+    "htmltab",
+    "plotrix",
+    "plot3D",
+    "data.table",
+    "dplyr"
+  )
 
   install.packages(
     cran_pkgs,
     lib = user_lib,
-    repos = "https://cloud.r-project.org",
+    repos = repos,
     type = "source"
   )
 
@@ -72,13 +92,20 @@ Rscript --vanilla -e '
     install.packages(
       "BiocManager",
       lib = user_lib,
-      repos = "https://cloud.r-project.org",
+      repos = repos,
       type = "source"
     )
   }
 
-  BiocManager::install(
+  # Bioconductor packages
+  bioc_pkgs <- c(
     "DESeq2",
+    "RBGL",
+    "graph"
+  )
+
+  BiocManager::install(
+    bioc_pkgs,
     ask = FALSE,
     update = FALSE,
     lib = user_lib
