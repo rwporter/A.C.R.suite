@@ -1,5 +1,5 @@
 #!/bin/bash
-# Edited by Riley Porter 1/30/26
+# Edited by Riley Porter 2/3/26
 
 set -euo pipefail
 
@@ -61,12 +61,13 @@ unzip 2.0.2.zip && rm 2.0.2.zip
 
 cd "$HOME/software/idr-2.0.2/"
 
+# Copy patched idr.py from A.C.R.suite into IDR package
 cp "$HOME/software/A.C.R.suite/idr.py" "$HOME/software/idr-2.0.2/idr/"
 
 pip install --user blosc
 pip install --user Cython
-python3 setup.py install --user
-pip3 install --user matplotlib
+python3.10 setup.py install --user
+pip3.10 install matplotlib --user
 
 cd -
 
