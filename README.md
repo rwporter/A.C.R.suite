@@ -14,6 +14,13 @@ wget https://github.com/rwporter/A.C.R.suite/raw/master/setup.sh
 bash setup.sh
 ```
 
+# Uninstaller
+
+```
+wget https://github.com/rwporter/A.C.R.suite/raw/master/uninstall.sh
+bash uninstall.sh
+```
+
 # A.C.R.suite
 ATAC-, ChIP- and RNA-seq data analysis tool suite.
 
