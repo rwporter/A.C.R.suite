@@ -36,6 +36,8 @@ The CLT was initially built in Chris Class lab @UCSD. If you have questions and 
 
 # Pre-requirements
   - R
+  - Python
+  - GCC
 
 # Instruction
 There are two main pipelines, one is for standard RNA-Seq analysis; the other one is for ATAC-Seq and transcription factor (TF) ChIP-Seq. Currenly it dose not support broad peak assays such as histone ChIP. But you can use peaks from ATAC-seq to quantify them, such as H3K27ac ChIP-Seq.
