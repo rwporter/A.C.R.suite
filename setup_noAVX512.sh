@@ -61,7 +61,6 @@ unzip 2.0.2.zip && rm 2.0.2.zip
 
 cd "$HOME/software/idr-2.0.2/"
 
-# Copy patched idr.py from A.C.R.suite into IDR package
 cp "$HOME/software/A.C.R.suite/idr.py" "$HOME/software/idr-2.0.2/idr/"
 
 pip install --user blosc
@@ -78,7 +77,7 @@ echo 'export PATH="$HOME/software/homer/bin:$HOME/software/A.C.R.suite:$PATH"' >
 grep -qxF 'export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"' ~/.bashrc || \
 echo 'export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4"' >> ~/.bashrc
 
-# Install R packages from source (compiled with AVX-512 disabled)
+# Install R packages from source
 Rscript --vanilla -e '
   options(tcltk.ignore = TRUE)
 
