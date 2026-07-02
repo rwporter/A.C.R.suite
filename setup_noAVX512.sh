@@ -1,5 +1,5 @@
 #!/bin/bash
-# Edited by Riley Porter 2/3/26
+# Edited by Riley Porter 7/2/26
 
 set -euo pipefail
 
@@ -65,8 +65,8 @@ cp "$HOME/software/A.C.R.suite/idr.py" "$HOME/software/idr-2.0.2/idr/"
 
 pip install --user blosc
 pip install --user Cython
-python3.10 setup.py install --user
-pip3.10 install matplotlib --user
+python3.11 setup.py install --user
+pip3.11 install matplotlib --user
 
 cd -
 
