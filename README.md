@@ -4,14 +4,14 @@ Use this installer to bypass AVX-512 CPU instructions (Useful for HPCs with Inte
 
 ```
 wget https://github.com/rwporter/A.C.R.suite/raw/master/setup_noAVX512.sh
-bash setup_noAVX512.sh
+sbatch setup_noAVX512.sh
 ```
 
 Use this installer to utilize AVX-512
 
 ```
 wget https://github.com/rwporter/A.C.R.suite/raw/master/setup.sh
-bash setup.sh
+sbatch setup.sh
 ```
 
 # Uninstaller
